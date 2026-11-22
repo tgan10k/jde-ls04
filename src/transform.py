@@ -15,6 +15,6 @@ def to_df(raw_data: dict[dict]) -> pd.DataFrame:
             d_price["symbol"] = symbol
             records.append(d_price)
 
-    df = pd.DataFrame(records, index=False)
+    df = pd.DataFrame(records)
     df["date"] = pd.to_datetime(df["date"]).dt.date
     return df.set_index("date")
