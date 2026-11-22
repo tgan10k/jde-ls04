@@ -13,7 +13,7 @@ pip install -r requirements.txt
 python main.py --symbols XAU/USD,EUR/USD --period 100
 ```
 
-Parameters
+### Parameters
 
 | Parameter | Default | Description |
 |---|---|---|
@@ -21,6 +21,17 @@ Parameters
 | `period` | 30 | Number of days to retrieve daily data for |
 | `raw` | `full_draws.json` | Raw JSON File |
 | `output-csv` | `xsmb_results.csv` | Output CSV File |
+
+### Ouput
+
+| Column | Description |
+|---|---|
+| `date` | Trading session date (typically YYYY-MM-DD) |
+| `symbol` | Unique identifier for the trading instrument (e.g., XAU/USD, EUR/USD).|
+| `open` | First price when the period opens |
+| `high` | Highest price reached during the period |
+| `low` | Lowest price reached during the period |
+| `close` | last price when the period closes |
 
 
 ## Project Structure
