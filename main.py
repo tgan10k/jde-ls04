@@ -18,7 +18,7 @@ def parse_args() -> argparse.Namespace:
 
     return parser.parse_args()
 
-if __name__ == "__main__":
+def main() -> None:
     load_dotenv()
     setup_logging()
     args = parse_args()
@@ -34,3 +34,7 @@ if __name__ == "__main__":
 
     export_csv(df, "data/" + args.output_csv)
     logger.info(f"Successfully stored {len(df)} daily price records to {args.output_csv} file for: \n\t{args.symbols}")
+    
+
+if __name__ == "__main__":
+    main()
