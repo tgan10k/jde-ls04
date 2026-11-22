@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from src.config import setup_logging
 from src.api_client import fetch_daily_prices
 from src.storage import store_json
+from src.transform import to_df
 
 logger = logging.getLogger(__name__)
 
@@ -27,3 +28,6 @@ if __name__ == "__main__":
 
     logger.info(f"Store raw data to JSON file: {args.raw}")
     store_json(raw_data, args.raw)
+    
+    logger.info(f"Transform raw data")
+    df = to_df(raw_data)

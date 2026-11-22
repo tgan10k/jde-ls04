@@ -16,7 +16,7 @@ def fetch_daily_prices(symbols: str = "XAU/USD", period: int = 30) -> dict[dict]
     Returns:
         dict[dict]: daily prices of trading instruments
     """
-    
+
     url = os.getenv("DATA12_API_URL")
     headers = {
         "x-rapidapi-key": os.getenv("DATA12_API_KEY"),
@@ -29,5 +29,7 @@ def fetch_daily_prices(symbols: str = "XAU/USD", period: int = 30) -> dict[dict]
         "interval":"1day"
     }
     response = requests.get(url, headers=headers, params=q_params)
-    
+
+    if not "," in symbols:
+        return {symbols: response.json()}
     return response.json()
