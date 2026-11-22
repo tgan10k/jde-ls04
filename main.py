@@ -14,7 +14,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--symbols", type=str, default="XAU/USD", help="Instrument Symbol (default: XAU/USD)")
     parser.add_argument("--period", type=int, default=30, help="Fetched Period (days) (default: 30)")
     parser.add_argument("--raw", type=str, default="raw.json", help="Raw JSON file path (default: raw.json)")
-    parser.add_argument("--output_csv", type=str, default="result.csv", help="Output csv file path (default: result.csv)")
+    parser.add_argument("--output-csv", type=str, default="result.csv", help="Output csv file path (default: result.csv)")
 
     return parser.parse_args()
 
