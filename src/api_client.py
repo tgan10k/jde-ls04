@@ -4,7 +4,9 @@ import requests
 
 from src.utils import retry
 
-@retry(max_attempts = 3, delay = 2, logger = logging.getLogger(__name__))
+logger = logging.getLogger(__name__)
+
+@retry(retries = 3, delay = 2, logger = logger)
 def fetch_daily_prices(symbols: str = "XAU/USD", period: int = 30) -> dict[dict]:
     """Fetch latest daily prices of trading instrument from API 
     Args:
